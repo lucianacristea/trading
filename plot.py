@@ -5,7 +5,7 @@ def test_run():
   df=pd.read_csv("Curs_valutar1.csv")
   print(df.head())
   print(df['CHF'])
-  print(df.Two.dtype)
+  print(df.CHF.dtype)
   df.plot()
   plt.show()
   
