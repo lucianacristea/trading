@@ -6,7 +6,7 @@ def test_run():
   # convert the 'Date' column to datetime format 
   print(df.head())
   print (df.dtypes)
-  df['Data']= pd.to_datetime(df['Data']) 
+  df.index = pd.to_datetime(df.index)
   ###df['CHF'].plot()
   df[['CHF','EUR']].plot()
   plt.show()
