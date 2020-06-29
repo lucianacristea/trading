@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def test_run():
-  df=pd.read_csv("Curs_valutar.csv", index_col="Data", parse_dates=True)
+  df=pd.read_csv("Curs_valutar.csv", index_col="Dates", parse_dates=True)
   # convert the 'Date' column to datetime format 
   print(df.head())
   print (df.dtypes)
