@@ -6,13 +6,16 @@ def plot_selected(df, columns, start_index, end_index):
     # TODO: Your code here
     # Note: DO NOT modify anything else!
     df=df.loc[start_index:end_index, columns]
-    return df
+    return normalize_data(df)
 
 def plot_data(df, title, fontsize, xlabel, ylabel):
   ax=df.plot(title=title, fontsize=fontsize)
   ax.set_xlabel(xlabel)
   ax.set_ylabel(ylabel)
   plt.show()
+    
+def normalize_data(df):
+    return df/df.iloc[0,:]
 
 def test_run():
   df=pd.read_csv("Curs_valutar.csv", index_col="Dates", parse_dates=True)
