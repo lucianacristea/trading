@@ -8,8 +8,7 @@ def plot_selected(df, columns, start_index, end_index):
     df=df.loc[start_index:end_index, columns]
     return df
 
-
-def plot_data(df, title, fontsize, xlabel, ylabel)
+def plot_data(df, title, fontsize, xlabel, ylabel):
   ax=df.plot(title=title, fontsize=fontsize)
   ax.set_xlabel(xlabel)
   ax.set_ylabel(ylabel)
