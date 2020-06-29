@@ -6,7 +6,7 @@ def plot_selected(df, columns, start_index, end_index):
     # TODO: Your code here
     # Note: DO NOT modify anything else!
     df=df.loc[start_index:end_index, columns]
-    return normalize_data(df)
+    return df
 
 def plot_data(df, title, fontsize, xlabel, ylabel):
   ax=df.plot(title=title, fontsize=fontsize)
@@ -30,7 +30,7 @@ def test_run():
   ###df.plot()
   # Slice and plot
   plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')
-  plot_data(df, "Curs valutar", 2, "Dates", "Price")
+  plot_data(normalize_data(df), "Curs valutar", 2, "Dates", "Price")
   
   
 if __name__=="__main__":
