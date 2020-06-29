@@ -2,11 +2,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def test_run():
-  df=pd.read_csv("Curs_valutar1.csv", index_col="Data", parse_dates=True)
+  df=pd.read_csv("Curs_valutar.csv", index_col="Data", parse_dates=True)
   # convert the 'Date' column to datetime format 
   print(df.head())
   print (df.dtypes)
-  df.index = pd.to_datetime(df.index)
+  ###df.index = pd.to_datetime(df.index)
   ###df['CHF'].plot()
   df[['CHF','EUR']].plot()
   plt.show()
