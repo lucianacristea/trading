@@ -10,7 +10,7 @@ def test_run():
   ###df.index = pd.to_datetime(df.index)
   ###df['CHF'].plot()
   ###df[['CHF','EUR']].plot()
-  df=df/df[0]
+  df=df/df.loc[0]
   df.plot()
   plt.show()
   
