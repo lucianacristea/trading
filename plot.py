@@ -69,7 +69,7 @@ def test_run():
   # Slice and plot
   ###plot_data(normalize_data( plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')), "Curs valutar", 2, "Dates", "Price")
   ###plot_data(plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020'), "Curs valutar", 2, "Dates", "Price")
-  plot_bollinger_data(plot_selected(df,['CHF'], '06.06.2020', '29.06.2020'), 'CHF', 20, "Bollinger Bands", 2, "Dates", "Price")
+  plot_bollinger_data(plot_selected(df,['CHF'], '03.01.2020', '29.06.2020'), 'CHF', 20, "Bollinger Bands", 2, "Dates", "Price")
   
 if __name__=="__main__":
   test_run()
