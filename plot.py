@@ -12,6 +12,7 @@ def plot_data(df, title, fontsize, xlabel, ylabel):
   ax=df.plot(title=title, fontsize=fontsize)
   ax.set_xlabel(xlabel)
   ax.set_ylabel(ylabel)
+  ax.legend()
   plt.show()
     
 def normalize_data(df):
