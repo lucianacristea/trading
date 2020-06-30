@@ -34,6 +34,11 @@ def get_bollinger_bands(rm, rstd):
     lower_band=rm-2*rstd
     return upper_band, lower_band
 
+def compute_daily_returns(df):
+    # Compute and return the daily return values.
+    # Note: Returned DataFrame must have the same number of rows
+    return df.pct_change(1).fillna(0)
+
 def plot_bollinger_data(df, label, window, title, fontsize, xlabel, ylabel):
     # Compute Bollinger Bands
     # 1. Compute rolling mean
@@ -67,9 +72,19 @@ def test_run():
   ###df=df/df.loc[0]
   ###df.plot()
   # Slice and plot
-  ###plot_data(normalize_data( plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')), "Curs valutar", 2, "Dates", "Price")
+  # Plot all currencies for 2020
   ###plot_data(plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020'), "Curs valutar", 2, "Dates", "Price")
+  
+  # Plot all currencies for 2020 with normalize values
+  ###plot_data(normalize_data( plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')), "Curs valutar", 2, "Dates", "Price")
+  
+  # Plot Bollinger bands vaues for CHF for 2020 for a window of 20 days
   plot_bollinger_data(plot_selected(df,['CHF'], '01.01.2020', '29.06.2020'), 'CHF', 20, "Bollinger Bands", 2, "Dates", "Price")
+
+  # Compute daily returns
+  daily_returns = compute_daily_returns(plot_selected(df,['CHF'], '01.01.2020', '29.06.2020'))
+  plot_data(daily_returns, title="Daily returns", ylabel="Daily returns")
+
   
 if __name__=="__main__":
   test_run()
