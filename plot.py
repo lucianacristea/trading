@@ -12,7 +12,6 @@ def plot_data(df, title, fontsize, xlabel, ylabel):
   ax=df.plot(title=title, fontsize=fontsize)
   ax.set_xlabel(xlabel)
   ax.set_ylabel(ylabel)
-  ax.legend()
   plt.show()
     
 def normalize_data(df):
@@ -53,6 +52,7 @@ def plot_bollinger_data(df, label, window, title, fontsize, xlabel, ylabel):
     lower_band.plot(label='lower band', ax=ax)  
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+    ax.legend()
     plt.show()
 
 def test_run():
@@ -69,7 +69,7 @@ def test_run():
   # Slice and plot
   ###plot_data(normalize_data( plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')), "Curs valutar", 2, "Dates", "Price")
   ###plot_data(plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020'), "Curs valutar", 2, "Dates", "Price")
-  plot_bollinger_data(plot_selected(df,['CHF'], '02.06.2020', '29.06.2020'), 'CHF', 20, "Bollinger Bands", 2, "Dates", "Price")
+  plot_bollinger_data(plot_selected(df,['CHF'], '03.06.2020', '29.06.2020'), 'CHF', 20, "Bollinger Bands", 2, "Dates", "Price")
   
 if __name__=="__main__":
   test_run()
