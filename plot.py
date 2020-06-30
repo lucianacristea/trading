@@ -83,7 +83,7 @@ def test_run():
 
   # Compute daily returns
   daily_returns = compute_daily_returns(plot_selected(df,['CHF'], '01.01.2020', '29.06.2020'))
-  plot_data(daily_returns, title="Daily returns", 2, "Dates", ylabel="Daily returns")
+  plot_data(daily_returns, "Daily returns", 20, "Dates", "Daily returns")
 
   
 if __name__=="__main__":
