@@ -31,10 +31,8 @@ def test_run():
   # Slice and plot
   ###plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')
   ###plot_data(normalize_data(df), "Curs valutar", 2, "Dates", "Price")
-
- 
   plot_data(normalize_data( plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020')), "Curs valutar", 2, "Dates", "Price")
-  
+  plot_data(plot_selected(df, ['CHF','EUR','GBP','USD'], '03.01.2020', '29.06.2020'), "Curs valutar", 2, "Dates", "Price")
   
 if __name__=="__main__":
   test_run()
