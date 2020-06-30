@@ -19,13 +19,13 @@ def normalize_data(df):
 
 def get_rolling_mean(values, window):
     """Return rolling mean of given values, using specified window size."""
-    return pd.rolling_mean(values, window=window)
+    return values.rolling(window).mean()
 
 
 def get_rolling_std(values, window):
     """Return rolling standard deviation of given values, using specified window size."""
     # TODO: Compute and return rolling standard deviation
-    return pd.rolling_std(values, window)
+    return values.rolling(window).std()
 
 def get_bollinger_bands(rm, rstd):
     """Return upper and lower Bollinger Bands."""
